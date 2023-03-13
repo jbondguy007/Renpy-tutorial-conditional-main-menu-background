@@ -108,6 +108,19 @@ image dynamic_main_menu_bg = ConditionSwitch(
 define gui.main_menu_background = "dynamic_main_menu_bg"
 ```
 
+## Advanced Usage via Conditional Statements
+
+The `ConditionSwitch()` displayable can take various advanced conditions. For example, you may have multiple flags and values to check to determine which background to display. Below are a few examples of more advanced uses of `ConditionSwitch()` conditions.
+```py
+image dynamic_main_menu_bg = ConditionSwitch(
+    "persistent.saved_eileen and persistent.lucy_lovepoints < 10", "images/main_bg/eileen_love_interest.png",
+    "persistent.char_strength > persistent.char_smarts or persistent.mc_beat_therock", "images/main_bg/mc_flexing.png",
+    "all([persistent.eileenlover, persistent.lucylover])", "images/main_bg/love_triangle.png",
+    "not any([persistent.eileenlover, persistent.lucylover])", "images/main_bg/forever_alone.png",
+    "True", "images/main_bg/default_main_menu_bg.png"
+)
+```
+
 ## Afterword
 
 As mentioned previously, keep in mind that if you ever need to reset the flag(s) during development, you'll have to clear persistent data from the Ren'Py launcher. You may also want to consider setting up a way for the player to manually reset the persistent flags from in-game, if they want to play through the game again from the beginning without seeing persistent changes to the main menu.
