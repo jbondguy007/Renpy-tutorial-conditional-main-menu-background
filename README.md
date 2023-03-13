@@ -89,9 +89,9 @@ Next, locate `gui.main_menu_background` which should be around line 88, but this
 
 ![gui.main_menu_background](https://i.imgur.com/8HrRoFr.png)
 
-Now, simply remove `"gui/main_menu.png"` and replace it with your new displayable name, without quotes:
+Now, simply remove `"gui/main_menu.png"` and replace it with your new displayable name, within quotes:
 ```py
-define gui.main_menu_background = dynamic_main_menu_bg
+define gui.main_menu_background = "dynamic_main_menu_bg"
 ```
 Save the changes to the file, and you're done! Once you reach the flag (chapter 2 in this case), the main menu background will permanently change to the chapter 2 background.
 
