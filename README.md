@@ -14,7 +14,7 @@ Whenever I mention to "define" (or `default`, etc) anything, this means that sta
 
 ### Persistent Data - Explanation
 
-Ren'Py has a few particuliar way to save data. The most common ways to define variables are `default` and `define`, both of which have their own use (read more at [Python Statements](https://www.renpy.org/doc/html/python.html). The `default` statement is what you would typically use to define a flag variable (in simpler term, a "switch" that toggles or determines if a certain thing was achieved in the game, such as reaching a certain chapter, etc).
+Ren'Py has a few particuliar way to save data. The most common ways to define variables are `default` and `define`, both of which have their own use (read more at [Python Statements](https://www.renpy.org/doc/html/python.html)). The `default` statement is what you would typically use to define a flag variable (in simpler term, a "switch" that toggles or determines if a certain thing was achieved in the game, such as reaching a certain chapter, etc).
 
 The caveat of a normal `default`ed variable however, is that the variable will only be accessible within the scope of a point in the game, or of a save file. As the main menu is not part of that scope, you can't refer to that variable as a flag for a condition to change the main menu background.
 
