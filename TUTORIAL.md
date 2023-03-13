@@ -95,9 +95,22 @@ define gui.main_menu_background = "dynamic_main_menu_bg"
 ```
 Save the changes to the file, and you're done! Once you reach the flag (chapter 2 in this case), the main menu background will permanently change to the chapter 2 background.
 
-As mentioned previously, keep in mind that if you ever need to reset this flag during development, you'll have to clear persistent data from the Ren'Py launcher. You may also want to consider setting up a way for the player to manually reset the persistent flags from in-game, if they want to play through the game again from the beginning without seeing persistent changes to the main menu.
+### Main Menu Background - Defining a New Background (Alternative Method)
+
+Alternatively, you can simply re-define `gui.main_menu_background` in your script file. Simply add the line below where you defined your dynamic displayable:
+
+```py
+image dynamic_main_menu_bg = ConditionSwitch(
+    "persistent.my_flag", "images/chapter_2_bg.png",
+    "True", "images/default_main_bg.png"
+)
+
+define gui.main_menu_background = "dynamic_main_menu_bg"
+```
 
 ## Afterword
+
+As mentioned previously, keep in mind that if you ever need to reset the flag(s) during development, you'll have to clear persistent data from the Ren'Py launcher. You may also want to consider setting up a way for the player to manually reset the persistent flags from in-game, if they want to play through the game again from the beginning without seeing persistent changes to the main menu.
 
 This concludes this tutorial - I hope this was helpful to your project. In case you require any assistance, I'm typically in the Ren'Py support server as @jbondguy007, feel free to ping me and I can try to offer assistance if time allows.
 
